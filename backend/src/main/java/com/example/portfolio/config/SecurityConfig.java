@@ -26,7 +26,7 @@ public class SecurityConfig {
                         .permitAll()
                         .anyRequest().authenticated()
                 )
-                .httpBasic(httpBasic -> {}); // or formLogin() if you want form-based login
+                .httpBasic(httpBasic -> {});
         return http.build();
     }
 
@@ -35,7 +35,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // Required for login authentication
+
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration config) throws Exception {
